@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono&display=swap');
+
+html, body {
+    background-color: #191c24;
+    margin: 0;
+    padding: 0;
+    color: #DADADA;
+    font-family: 'Roboto';
+    font-size: 0.9rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+
+    h1 {
+        font-family: 'Roboto Mono';
+    }
+
+    .badge {
+        font-family: 'Roboto Condensed';
+        display: inline-block;
+        min-width: 16px; /* pixel unit */
+        padding: 5px 5px; /* pixel unit */
+        border-radius: 5px;
+        font-size: 75px;
+        text-align: center;
+        background: #1779ba;
+        color: #fefefe;
+        font-size: 11px;
+        vertical-align: middle;
+        margin: 0 auto;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        th {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            text-align: center;
+
+            &.monospace {
+                font-family: 'Roboto Mono';
+            }
+        }
+
+
+        &[defeated="true"] {
+            color: #C02C44;
+            text-decoration: line-through;
+            opacity: .75;
+        }
+    }
+}
+
+button {
+    border-radius: 5px;
+    border: 1px solid #DADADA;
+    background-color: transparent;
+    color: #DADADA;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    margin-right: 3px;
+
+
+    &:hover {
+        border-color: #0ec764;
+        background-color: #0ec764;
+    }
+}
+
+a {
+    color: #DADADA;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.add-army {
+    max-width: 500px;
+    padding: 0;
+
+    .row {
+        width: 100%;
+        overflow: hidden;
+
+        .column {
+            width: calc(100% / 2);
+            float: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            &:first-of-type {
+                padding-right: 10px;
+            }
+
+            &:last-of-type {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+
+        &[type=text] {
+            background-color: transparent;
+            border: 1px solid #DADADA;
+            padding: 5px;
+            opacity: .7;
+            color: #DADADA;
+            transition: all .2s;
+            border-radius: 5px;
+
+            &:focus {
+                opacity: 1;
+            }
+        }
+
+        &[type=range] {
+            -webkit-appearance: none;
+            width: calc(100% - 2px);
+            height: 7.5px;
+            border-radius: 5px;
+            background: #DADADA;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: all .2s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 15px;
+                border-radius: 5px;
+                background: #0ec764;
+                cursor: pointer;
+                margin: 5px 0;
+            }
+
+            &::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #0ec764;
+                cursor: pointer;
+            }
+        }
+    }
+
+    span.value {
+        font-size: 12px;
+        float: right;
+        margin-top: 5px;
+        opacity: .5;
+    }
+
+    .strategies {
+        .option {
+            float: left;
+            width: calc((500px - 40px) / 3);
+            border: 1px solid #DADADA;
+            padding: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+            opacity: .7;
+            border-radius: 5px;
+
+            svg {
+                width: 100% !important;
+            }
+
+            p {
+                text-align: center;
+                text-transform: uppercase;
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:hover {
+                border-color: #0ec764;
+                opacity: 1;
+            }
+
+            &.selected {
+                border-color: #0ec764;
+
+                svg {
+                    path {
+                        fill: #0ec764;
+                    }
+                }
+
+                p {
+                    color: #0ec764;
+                }
+            }
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        float: right;
+        margin-right: 0;
+    }
+}
+
