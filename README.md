@@ -17,3 +17,13 @@ This project is made using Laravel and VueJS.
 
 Open the web address you have set up in your browser.
 
+## REST API Routes
+
+| Path | Method | Description |
+| --- | --- | --- |
+| `/api/games` | `GET` | Returns all the games |
+| `/api/games` | `POST` | Creates a new game |
+| `/api/games/{id}` | `GET` | Returns a game by the specified `{id}` parameter |
+| `/api/games/{id}/armies` | `POST` | Adds an army to the game. Required data: `name, starting_units, strategy` |
+| `/api/games/{id}/attack` | `POST` | Runs the attack |
+| `/api/games/{id}/reset` | `POST` | Resets the game |
