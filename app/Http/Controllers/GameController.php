@@ -84,6 +84,12 @@ class GameController extends Controller
                 'logs' => $logs
             ];
         } else {
+            if ($game->status == GAME::STATUS_FINISHED) {
+                return [
+                    'error' => 'The game has been finished. Please reset it to start the attack.'
+                ];
+            }
+
             return [
                 'error' => 'There has to be at least 5 armies to start the attack.'
             ];
