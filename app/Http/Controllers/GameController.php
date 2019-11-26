@@ -32,7 +32,7 @@ class GameController extends Controller
         $logs = [];
         $winner = null;
 
-        if ($game->status == GAME::STATUS_READY && $game->armies->count() >= 5) {
+        if (($game->status == GAME::STATUS_READY && $game->armies->count() >= 5) || $game->status == GAME::STATUS_IN_PROGRESS) {
             if ($game->alive_armies->count() > 1) {
                 foreach($armies as $key => $item) {
                     $army = Army::find($item->id);
